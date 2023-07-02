@@ -1,12 +1,16 @@
 // src/pages/index.js
 import React from 'react';
+import Layout from '../components/Layout.js';
 
 const IndexPage = () => {
   return (
-    <div>
-      <h1>Welcome to the Gatsby Index Page!</h1>
-      {/* Your homepage content goes here */}
-    </div>
+    <>
+      <Layout />
+      <div>
+        <h1>Welcome to the Gatsby Index Page!</h1>
+        {/* Your homepage content goes here */}
+      </div>
+    </>
   );
 };
 
