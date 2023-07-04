@@ -17,6 +17,7 @@
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
+    "gatsby-plugin-babel": "^1.0.0",
     "gatsby-plugin-google-analytics": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-react-helmet": "^6.11.0",
@@ -28,5 +29,8 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "styled-components": "^6.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6"
   }
 }

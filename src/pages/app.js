@@ -1,13 +1,9 @@
 // src/App.js
 import React from 'react';
+import Layout from '../components/Layout';
 
-const App = () => {
-  return (
-    <div>
-      <h1>Hello, Gatsby App!</h1>
-      {/* Add other components or content here */}
-    </div>
-  );
+const App = ({ element }) => {
+  return <Layout>{element}</Layout>;
 };
 
 export default App;
