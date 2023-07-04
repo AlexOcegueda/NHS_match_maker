@@ -72,4 +72,5 @@ const Container = styled.div`
 const Description = styled.p`
   color: black;
   margin-right: 0.5rem;
+  width: 15rem;
 `;
