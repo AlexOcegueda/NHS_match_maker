@@ -25,3 +25,12 @@ p {
 label {
     margin-right: .5rem;
 }
+
+.filters {
+    padding: 3rem;
+}
+
+.dog-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

@@ -1,0 +1,30 @@
+.page-heading {
+  	padding-bottom: 5rem;
+}
+
+.display-message {
+	margin-top: 5rem;
+}
+
+.faq-container {
+  display: flex;
+  margin: 5rem 0 5rem 5rem;
+}
+
+.faq-info {
+	width: 100%;
+}
+
+.faq-questions {
+}
+
+.faq-question {
+	color: gray;
+}
+
+/* Add a media query for screens with a maximum width of 600px */
+@media screen and (max-width: 770px) {
+  .faq-questions {
+    margin-left: 5rem;
+  }
+}

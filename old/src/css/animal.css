@@ -1,0 +1,51 @@
+.animal-container {
+  display: flex;
+  width: 40rem;
+  height: 15rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.animal-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-image {
+  border-radius: 1rem;
+  object-fit: cover;
+  width: 20rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  /* Medium screens */
+  .animal-container {
+    width: 30rem;
+    height: 13rem;
+  }
+
+  .animal-image {
+    width: 15rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Small screens */
+  .animal-container {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .animal-image {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+.animal-description {
+  color: black;
+  margin-right: 0.5rem;
+  width: 15rem;
+}

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import '../css/styles.css';
 import dogData from '../components/dogs.json';
 import Layout from '../components/Layout.js';
 import Animal from '../components/Animal.js';
 
-const IndexPage = () => {
+const Filter = () => {
     const [imgUrls, setImgUrls] = useState([]); // collects imgs of dogs
     const [selectedFilters, setSelectedFilters] = useState({
         breed: '',
@@ -12,7 +12,6 @@ const IndexPage = () => {
         playful: false,
         longHaired: false,
     });
-
 
     useEffect(() => {
         fetchDogImages();
@@ -30,7 +29,7 @@ const IndexPage = () => {
             return response.json();
         })
         .then((data) => {
-            setImgUrls(data.message); // Store the array of image URLs in the component's state
+            setImgUrls(data.message);
         })
         .catch((error) => {
             console.error("Error fetching dog images:", error);
@@ -60,75 +59,65 @@ const IndexPage = () => {
     return (
         <>
         <Layout />
-        <Filters>
-        <label>
-            Breed:
-            <input
-                type="text"
-                name="breed"
-                value={selectedFilters.breed}
-                onChange={handleFilterChange}
-            />
+        <div className="filters">
+            <label>
+                Breed:
+                <input
+                    type="text"
+                    name="breed"
+                    value={selectedFilters.breed}
+                    onChange={handleFilterChange}
+                />
             </label>
             <label>
-            Eye Color:
-            <select
-                name="eyeColor"
-                value={selectedFilters.eyeColor}
-                onChange={handleFilterChange}
-            >
-                <option value="">Any</option>
-                <option value="brown">Brown</option>
-                <option value="blue">Blue</option>
-                {/* Add more options for different eye colors */}
-            </select>
+                Eye Color:
+                <select
+                    name="eyeColor"
+                    value={selectedFilters.eyeColor}
+                    onChange={handleFilterChange}
+                >
+                    <option value="">Any</option>
+                    <option value="brown">Brown</option>
+                    <option value="blue">Blue</option>
+                    {/* Add more options for different eye colors */}
+                </select>
             </label>
             <label>
-            Playful:
-            <input
-                type="checkbox"
-                name="playful"
-                checked={selectedFilters.playful}
-                onChange={handleFilterChange}
-            />
+                Playful:
+                <input
+                    type="checkbox"
+                    name="playful"
+                    checked={selectedFilters.playful}
+                    onChange={handleFilterChange}
+                />
             </label>
             <label>
-            Long-Haired:
-            <input
-                type="checkbox"
-                name="longHaired"
-                checked={selectedFilters.longHaired}
-                onChange={handleFilterChange}
-            />
+                Long-Haired:
+                <input
+                    type="checkbox"
+                    name="longHaired"
+                    checked={selectedFilters.longHaired}
+                    onChange={handleFilterChange}
+                />
             </label>
-        </Filters>
+        </div>
 
-        <Container>
-        {dogData.dogs.filter(filterDogs).map((dog, index) => (
-            <Animal
-                key={index}
-                imgUrl={imgUrls[index]}
-                name={dog.name}
-                breed={dog.breed}
-                description={dog.description}
-                eyeColor={dog.eyeColor}
-                playful={dog.playful}
-                longHaired={dog.longHaired}
-            />
-        ))}
-        </Container>
-        
+        <div className="dog-container">
+            {dogData.dogs.filter(filterDogs).map((dog, index) => (
+                <Animal
+                    key={index}
+                    imgUrl={imgUrls[index]}
+                    name={dog.name}
+                    breed={dog.breed}
+                    description={dog.description}
+                    eyeColor={dog.eyeColor}
+                    playful={dog.playful}
+                    longHaired={dog.longHaired}
+                />
+            ))}
+        </div>
         </>
     );
 };
 
-export default IndexPage;
-
-const Filters = styled.div`
-    padding: 3rem;
-`;
-
-const Container = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-`;
+export default Filter;
