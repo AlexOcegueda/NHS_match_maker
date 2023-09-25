@@ -1,0 +1,29 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: center;
+    background-color: #672A4E;
+    padding: 2rem;
+}
+
+.title {
+    font-weight: bold;
+    flex: 1;
+}
+
+.nav {
+    display: flex;
+    margin-left: auto;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
