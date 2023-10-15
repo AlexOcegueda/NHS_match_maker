@@ -6,6 +6,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 const database = getDatabase(firebaseApp);
 
+// test data
 const dogs = [
   {
     name: 'Buddy',
@@ -25,13 +26,11 @@ const dogs = [
   
 ];
 
-// Function to populate the database with dogs
 const populateDatabaseWithDogs = () => {
   dogs.forEach((dog, index) => {
     // Generate a unique key for each dog
     const dogRef = ref(database, 'dogs/' + index);
 
-    // Set the dog data in the database
     set(dogRef, dog)
       .then(() => {
         console.log(`Dog ${index + 1} added successfully!`);
@@ -42,5 +41,4 @@ const populateDatabaseWithDogs = () => {
   });
 };
 
-// Call the function to populate the database with dogs
 populateDatabaseWithDogs();
